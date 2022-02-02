@@ -1,0 +1,11 @@
+/dist/wordpress/*
+/dist/vendor/
+
+# Plugins
+/dist/wp-content/plugins/*
+
+# Themes
+/dist/wp-content/themes/*
+
+# Uploads
+/dist/wp-content/uploads
