@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08072560e98d3c7b623b2e9f08cba712",
+    "content-hash": "85e88285e2dbec52b56e1a9bad13fdd1",
     "packages": [
         {
             "name": "composer/installers",
@@ -793,6 +793,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-graphql/"
+        },
+        {
+            "name": "wpackagist-theme/twentytwentytwo",
+            "version": "1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://themes.svn.wordpress.org/twentytwentytwo/",
+                "reference": "1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/theme/twentytwentytwo.1.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-theme",
+            "homepage": "https://wordpress.org/themes/twentytwentytwo/"
         }
     ],
     "packages-dev": [],
