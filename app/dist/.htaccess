@@ -1,12 +1,27 @@
 <IfModule mod_rewrite.c>
   RewriteEngine on
+
   # Block wordpress directory
   RewriteRule ^wordpress/?$ - [F,L]
+
+  # Pass everything in wp-content
+  RewriteCond %{REQUEST_URI} ^/wp-content/
+  RewriteRule . - [L]
+
+  # Root to index.php
+  RewriteRule ^(/?)$ /wordpress/index.php [QSA,L]
+
+  # WP-JSON support
+  RewriteCond %{REQUEST_URI} ^/wp-json
+  RewriteRule . /wordpress/index.php [QSA,L]
+
+  # GraphQL nice URL
+  RewriteCond %{REQUEST_URI} ^/graphql
+  RewriteRule . /wordpress/index.php [QSA,L]
+
+  # Rewrite all files in WP dir
   RewriteCond %{REQUEST_URI} !^/wordpress/
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.*)$ /wordpress/$1
-  RewriteRule ^(/)?$ wordpress/index.php [L]
+  RewriteRule ^(.*)$ /wordpress/$1 [L]
 </IfModule>
 
 # Disable index view
